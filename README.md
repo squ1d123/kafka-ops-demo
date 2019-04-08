@@ -29,3 +29,4 @@ terraform apply
 [terraform]: https://www.terraform.io/
 [terraform-kafka-provider]: https://github.com/Mongey/terraform-provider-kafka
 [kafka-topics-ui]: https://github.com/Landoop/kafka-topics-ui
+[docker-compose]: https://docs.docker.com/compose/
