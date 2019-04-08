@@ -22,6 +22,16 @@ terraform plan
 terraform apply
 ```
 
+## Interfaces
+
+| component       | port | url                     |
+| ---             | ---  | ---                     |
+| kafka           | 9092 |                         |
+| kafka-rest      | 8082 | <http://localhost:8082> |
+| kafka-topics-ui | 8000 | <http://localhost:8000> |
+| jenkins         | 8080 | <http://localhost:8080> |
+
+
 ## Future work
 
 - Integrate jenkins hook
