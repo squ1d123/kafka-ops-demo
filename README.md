@@ -24,7 +24,6 @@ terraform apply
 
 ## Future work
 
-- Get [kafka-topics-ui][kafka-topics-ui] running to be able to visually view changes in topics
 - Integrate jenkins hook
 
 [terraform]: https://www.terraform.io/
