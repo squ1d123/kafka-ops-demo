@@ -20,12 +20,3 @@ resource "kafka_topic" "foo" {
   replication_factor = 1
   partitions         = 100
 }
-
-resource "kafka_acl" "test" {
-  resource_name       = "syslog"
-  resource_type       = "Topic"
-  acl_principal       = "User:Alice"
-  acl_host            = "*"
-  acl_operation       = "Write"
-  acl_permission_type = "Allow"
-}
