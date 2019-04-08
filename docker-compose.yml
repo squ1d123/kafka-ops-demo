@@ -5,6 +5,7 @@ services:
     image: jenkins/jenkins:2.171-alpine
     volumes:
       - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - 8080:8080
 
