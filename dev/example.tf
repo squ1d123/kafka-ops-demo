@@ -1,9 +1,3 @@
-provider "kafka" {
-  bootstrap_servers = ["localhost:9092"]
-  sasl_username = "admin"
-  sasl_password = "admin-secret"
-}
-
 resource "kafka_topic" "logs" {
   name               = "systemd_logs"
   replication_factor = 1

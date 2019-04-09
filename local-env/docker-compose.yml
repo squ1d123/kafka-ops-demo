@@ -3,6 +3,8 @@ version: '3.4'
 services:
   jenkins:
     image: jenkins/jenkins:2.171-alpine
+    container_name: jenkins
+    restart: on-failure
     volumes:
       - jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
@@ -11,6 +13,7 @@ services:
 
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
+    container_name: zookeeper
     volumes:
       - ./zookeeper.properties.template:/etc/confluent/docker/zookeeper.properties.template
       - ./zookeeper_server_jaas.conf:/etc/kafka/zookeeper_server_jaas.conf
@@ -38,6 +41,8 @@ services:
     # "`-._,-'"`-._,-'"`-._,-'"`-._,-'"`-._,-'"`-._,-'"`-._,-'"`-._,-'"`-._,-
     #
     image: confluentinc/cp-kafka:latest
+    container_name: kafka
+    restart: on-failure
     depends_on:
       - zookeeper
     ports:
@@ -61,6 +66,7 @@ services:
 
   rest-proxy:
     image: confluentinc/cp-kafka-rest:5.2.1
+    restart: on-failure
     depends_on:
       - zookeeper
       - kafka
@@ -77,6 +83,7 @@ services:
 
   kafka-topics:
     image: landoop/kafka-topics-ui
+    restart: on-failure
     depends_on:
       - zookeeper
       - kafka
@@ -91,3 +98,4 @@ services:
 
 volumes:
   jenkins_home:
+    name: jenkins_home
