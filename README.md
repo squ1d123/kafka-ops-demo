@@ -39,6 +39,10 @@ Diagrams are made with <http://chartmage.com/index.html>
 
 ![Sequence Diagram](diagrams/sequence-diagram.png)
 
+## Demo Example
+
+[![Demo video](http://img.youtube.com/vi/qTIIJg81o-Q/0.jpg)](http://www.youtube.com/watch?v=qTIIJg81o-Q "demo kafka ops interaction terraform")
+
 ## Future work
 
 - Integrate jenkins hook
