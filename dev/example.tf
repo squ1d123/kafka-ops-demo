@@ -15,6 +15,16 @@ resource "kafka_topic" "foo" {
   partitions         = 100
 }
 
+resource "kafka_topic" "my-new-topic-which-is-awesome" {
+  name               = "my-new-topic-which-is-awesome"
+  replication_factor = 1
+  partitions         = 3
+
+  config = {
+    "retention.ms"   = 48000
+  }
+}
+
 resource "kafka_topic" "my-new-topic" {
   name               = "my-new-topic"
   replication_factor = 1
