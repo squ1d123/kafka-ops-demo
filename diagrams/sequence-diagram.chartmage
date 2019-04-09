@@ -1,0 +1,14 @@
+participant User
+participant Github
+participant Jenkins
+participant Approvers
+participant Kafka
+Github ->> User: : Clone repository
+User -->> Github: Push Changes (new topic)
+User ->> Github: Open Pull request
+Github ->> Jenkins: Triggers Checks
+Jenkins ->> Github: Produces plan of what changes will happen
+Github ->> Approvers: Notify ready for approval
+Approvers ->> Github: : Approve
+Github ->> Jenkins: Notify that code is merged
+Jenkins ->> Kafka: Apply Changes
