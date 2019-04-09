@@ -12,12 +12,14 @@ This is to demontrate what we can use to automate kafka operations such as addin
 ## Running Locally
 
 ```bash
-# Bring up kafka
-docker-compose up -d
-
+# Bring up all services
+./local-env/start-all.sh
+# change into the dev directory
+cd dev
+# Initialise terraform
+terraform init
 # See what will change when terraform runs.
 terraform plan
-
 # Apply the changes
 terraform apply
 ```
