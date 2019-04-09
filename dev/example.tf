@@ -14,3 +14,22 @@ resource "kafka_topic" "foo" {
   replication_factor = 1
   partitions         = 100
 }
+
+resource "kafka_topic" "my-new-topic" {
+  name               = "my-new-topic"
+  replication_factor = 1
+  partitions         = 3
+
+  config = {
+    "retention.ms"   = 700
+  }
+}
+
+resource "kafka_acl" "my-new-group" {
+  resource_name       = "my-new-group"
+  resource_type       = "Group"
+  acl_principal       = "User:Alice"
+  acl_host            = "*"
+  acl_operation       = "Read"
+  acl_permission_type = "Allow"
+}
