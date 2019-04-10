@@ -33,11 +33,17 @@ terraform apply
 | kafka-topics-ui | 8000 | <http://localhost:8000> |
 | jenkins         | 8080 | <http://localhost:8080> |
 
-## Sequence Diagram
+## Diagram
+
+**Sequence Diagram**
 
 Diagrams are made with <http://chartmage.com/index.html>
 
 ![Sequence Diagram](diagrams/sequence-diagram.png)
+
+**Flow Diagram**
+
+![Flow Diagram](diagrams/kafka-ops-demo.gif)
 
 ## Demo Example
 
