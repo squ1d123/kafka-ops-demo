@@ -21,7 +21,7 @@ resource "kafka_topic" "my-new-topic-which-is-awesome" {
   partitions         = 3
 
   config = {
-    "retention.ms"   = 48000
+    "retention.ms" = 48000
   }
 }
 
@@ -31,7 +31,7 @@ resource "kafka_topic" "my-new-topic" {
   partitions         = 3
 
   config = {
-    "retention.ms"   = 700
+    "retention.ms" = 700
   }
 }
 
