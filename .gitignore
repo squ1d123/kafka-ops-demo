@@ -1,2 +1,5 @@
 .terraform
 terraform.*
+**/terraform-provider-kafka
+
+**.tar*

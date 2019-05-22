@@ -1,6 +1,17 @@
 ---
 version: '3.4'
 services:
+
+  haproxy:
+    image: haproxy:1.9.8-alpine
+    container_name: haproxy
+    ports:
+      - 80:80
+      - 443:443
+      - 9093:9093
+    volumes:
+      - ./haproxy:/usr/local/etc/haproxy
+
   jenkins:
     build: ./jenkins
     container_name: jenkins
@@ -10,8 +21,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./entrypoint.sh:/entrypoint.sh
     entrypoint: ["./entrypoint.sh"]
-    ports:
-      - 8080:8080
+    # ports:
+    #   - 8080:8080
 
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
