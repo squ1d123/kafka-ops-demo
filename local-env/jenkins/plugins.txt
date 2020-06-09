@@ -26,3 +26,6 @@ basic-branch-build-strategies
 pipeline-utility-steps
 ldap
 http_request
+build-user-vars-plugin
+nexus-jenkins-plugin
+code-coverage-api
